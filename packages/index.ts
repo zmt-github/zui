@@ -1,10 +1,11 @@
 import { App, DefineComponent } from 'vue'
-import XButton from './Button'
-import XLink from './Link'
+import ZButton from './Button'
+import ZLink from './Link'
 
-const components: any[] = [
-  XButton,
-  XLink
+// eslint-disable-next-line
+const components: Array<any> = [
+  ZButton,
+  ZLink
 ]
 
 function install (app: App): void {
@@ -13,6 +14,6 @@ function install (app: App): void {
 
 export default {
   install,
-  XButton,
-  XLink
+  ZButton,
+  ZLink
 }
