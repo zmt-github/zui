@@ -1,8 +1,14 @@
 $color: (
   default: #fff,
-  primary: #409eff,
+  default-plain: #fff,
+  primary: #40a0ff,
+  primary-plain: #40a0ff1f,
   success: #67c23a,
+  success-plain: #67c23a1c,
   danger: #f56c6c,
+  danger-plain: #f56c6c18,
   info: #909399,
+  info-plain: #9093991a,
   warning: #e6a23c,
-)
+  warning-plain: #e6a23c15,
+);

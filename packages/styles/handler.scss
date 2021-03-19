@@ -3,7 +3,3 @@
 @function getColor($key) {
   @return map-get($color, $key)
 };
-
-@mixin bg-color ($color) {
-  background-color: getColor($color)!important;
-};
