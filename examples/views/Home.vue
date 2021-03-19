@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <x-button @click="onClick">你好</x-button>
+    <z-button @click="onClick">你好</z-button>
+    <!-- <z-link @click="onClick">你好</z-link> -->
   </div>
 </template>
 
