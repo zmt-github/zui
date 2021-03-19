@@ -52,7 +52,7 @@ export default defineComponent({
   }
   &--default{
     background-color: getColor('default');
-    color: #000
+    color: #000;
   }
 }
 </style>
