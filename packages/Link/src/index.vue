@@ -1,10 +1,15 @@
 <template>
-  <a href=""
+  <a
+    :href="href"
     :class="[
-      'z-lin--'+ type
+      'z-link--' + type,
+      disabled ? 'is-disabled' : '',
+      underline ? 'is-underline' : ''
     ]"
+    :disabled='disabled'
+    @click="click($event)"
   >
-    <slot></slot>
+    <span><slot></slot></span>
   </a>
 </template>
 
@@ -14,18 +19,38 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'z-link',
 
-  porps: {
+  props: {
     type: {
       type: String,
       default: 'default',
       validator: (value: string) => {
-        return ['success', 'danger', 'info', 'primary', 'warning', 'default'].indexOf(value) > -1
+        return ['success', 'danger', 'info', 'primary', 'warning'].indexOf(value) > -1
       }
+    },
+
+    href: {
+      type: String,
+      default: '/'
+    },
+
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+
+    underline: {
+      type: Boolean,
+      default: false
     }
   },
 
-  setup () {
-    return {}
+  setup (props) {
+    function click (event: Event) {
+      if (props.disabled) {
+        event.preventDefault()
+      }
+    }
+    return { click }
   }
 })
 </script>
@@ -38,7 +63,15 @@ a{
 $types: 'primary', 'success', 'info', 'warning', 'danger', 'default';
 @each $type in $types {
   .z-link--#{$type} {
-    background-color: getColor($type);
+    color: getColor($type);
+    &.is-underline:hover{
+      text-decoration: underline;
+    }
+    &.is-disabled{
+      opacity: .7;
+      cursor: not-allowed;
+      text-decoration: none;
+    }
   }
 }
 </style>

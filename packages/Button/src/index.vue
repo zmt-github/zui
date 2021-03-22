@@ -21,9 +21,9 @@ export default defineComponent({
   props: {
     type: {
       type: String,
-      default: 'default',
+      default: 'primary',
       validator: (value: string) => {
-        return ['success', 'danger', 'info', 'primary', 'warning', 'default'].indexOf(value) > -1
+        return ['success', 'danger', 'info', 'primary', 'warning'].indexOf(value) > -1
       }
     },
 
