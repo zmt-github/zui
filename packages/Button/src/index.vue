@@ -10,7 +10,7 @@
       plain ? 'is-plain' : ''
     ]"
   >
-    <span><slot></slot></span>
+    <span><slot>你好</slot></span>
   </button>
 </template>
 <script lang="ts">
@@ -93,6 +93,10 @@ $sizes: 'mini', 'small', 'normal', 'large';
         border-color: getColor($type);
         cursor: no-drop;
       }
+      &::selection{
+        background-color: getColor($type);
+        color: getColor('default')
+      }
     }
     .is-round {
       border-radius: 5px;
@@ -116,10 +120,6 @@ $sizes: 'mini', 'small', 'normal', 'large';
       &.is-round{ border-radius: 16px;}
     }
   }
-}
-
-.z-button:hover{
-  opacity: .7;
 }
 
 .z-button[disabled] {

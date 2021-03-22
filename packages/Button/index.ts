@@ -1,8 +1,8 @@
-import XButton from './src/index.vue'
+import ZButton from './src/index.vue'
 import { App } from 'vue'
 
-XButton.install = function (app: App) {
-  app.component(XButton.name, XButton)
+ZButton.install = function (app: App) {
+  app.component(ZButton.name, ZButton)
 }
 
-export default XButton
+export default ZButton

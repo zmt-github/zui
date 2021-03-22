@@ -46,12 +46,14 @@
     <z-button type='primary' circle>你好</z-button>
     <z-button type='info' circle >你好</z-button>
     <br/>
-    <z-button type='primary' plain circle>你好</z-button>
-    <z-button type='success' plain circle>你好</z-button>
-    <z-button type='warning' plain circle>你好</z-button>
-    <z-button type='danger' plain circle>你好</z-button>
-    <z-button type='info' plain circle>你好</z-button>
+    <z-button type='primary' plain circle>☂</z-button>
+    <z-button type='success' plain circle>☂</z-button>
+    <z-button type='warning' plain circle>☂</z-button>
+    <z-button type='danger' plain circle>☂</z-button>
+    <z-button type='info' plain circle>☂</z-button>
+    <hr/><hr/>
 
+    <z-link type='primary'>163</z-link>
   </div>
 </template>
 
