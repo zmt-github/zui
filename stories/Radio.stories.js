@@ -5,7 +5,7 @@ export default {
   component: ZRadio,
   argTypes: {
     size: { control: { type: 'select', options: ['medium', 'small', 'mini'] } },
-    type: { control: { type: 'select', options: ['primary', 'success', 'info', 'warning', 'danger', 'default'] } }
+    type: { control: { type: 'select', options: ['primary', 'success', 'info', 'warning', 'danger'] } }
   }
 }
 
