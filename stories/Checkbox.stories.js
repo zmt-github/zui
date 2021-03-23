@@ -5,6 +5,7 @@ export default {
   component: ZCheckbox,
   argTypes: {
     size: { control: { type: 'select', options: ['medium', 'small', 'mini'] } },
+    type: { control: { type: 'select', options: ['primary', 'success', 'info', 'warning', 'danger'] } },
     onClick: {}
   }
 }
@@ -21,4 +22,5 @@ const Template = (args) => ({
 })
 
 export const Checkbox = Template.bind({})
-Checkbox.args = {}
+Checkbox.args = {
+}
