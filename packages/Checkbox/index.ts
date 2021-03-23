@@ -1,8 +1,8 @@
-import XCheckbox from './src/XCheckbox.vue'
+import ZCheckbox from './src/index.vue'
 import { App } from 'vue'
 
-XCheckbox.install = function (app: App) {
-  app.component(XCheckbox.name, XCheckbox)
+ZCheckbox.install = function (app: App) {
+  app.component(ZCheckbox.name, ZCheckbox)
 }
 
-export default XCheckbox
+export default ZCheckbox
