@@ -1,11 +1,13 @@
 import { App, DefineComponent } from 'vue'
 import ZButton from './Button'
 import ZLink from './Link'
+import ZRadio from './Radio'
 
 // eslint-disable-next-line
 const components: Array<any> = [
   ZButton,
-  ZLink
+  ZLink,
+  ZRadio
 ]
 
 function install (app: App): void {
@@ -15,5 +17,6 @@ function install (app: App): void {
 export default {
   install,
   ZButton,
-  ZLink
+  ZLink,
+  ZRadio
 }
