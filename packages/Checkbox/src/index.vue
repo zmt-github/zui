@@ -1,16 +1,17 @@
 <template>
-  <label>
-    <input
-      type="checkbox"
-      class="z-checkbox"
-      :disabled='disabled'
-      :name='name'
-      :class="[
-        'z-checkbox--' + size,
-        border? 'is-border' : ''
-      ]"
-    />
-    <span>{{label}}</span>
+  <label class="z-checkbox">
+    <span class="z-checkbox__input">
+      <span
+        class="z-checkbox__inner"
+      ></span>
+      <input
+        class="z-checkbox__original"
+        type="checkbox"
+        :disabled='disabled'
+        :checked='checked'
+      >
+    </span>
+    <span class="z-checkbox__label"><slot>{{label}}</slot></span>
   </label>
 </template>
 
@@ -21,14 +22,24 @@ export default defineComponent({
   name: 'z-checkbox',
 
   props: {
-    disabled: {
-      type: Boolean,
-      default: false
+    modelValue: {
+
     },
 
     label: {
       type: String,
       default: ''
+    },
+    trueLabel: {
+
+    },
+
+    falseLabel: {
+
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     },
 
     border: {
@@ -45,8 +56,7 @@ export default defineComponent({
     },
 
     name: {
-      type: String,
-      default: ''
+
     },
 
     checked: {
@@ -57,11 +67,7 @@ export default defineComponent({
 })
 </script>
 <style lang="scss" scoped>
-$sizes: 'medium', 'small', 'mini';
+.z-checkbox{
 
-@each $size in $sizes {
-  .z-radio--#{$size} {
-    font-size: 13px;
-  }
 }
 </style>
