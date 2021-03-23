@@ -57,7 +57,7 @@ export default defineComponent({
       type: String,
       default: 'primary',
       validator: (value: string) => {
-        return ['primary', 'success', 'info', 'warning', 'danger', 'default'].indexOf(value) > -1
+        return ['primary', 'success', 'info', 'warning', 'danger'].indexOf(value) > -1
       }
     },
 
