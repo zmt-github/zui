@@ -1,8 +1,8 @@
-import XRadio from './src/XRadio.vue'
+import ZRadio from './src/index.vue'
 import { App } from 'vue'
 
-XRadio.install = function (app: App) {
-  app.component(XRadio.name, XRadio)
+ZRadio.install = function (app: App) {
+  app.component(ZRadio.name, ZRadio)
 }
 
-export default XRadio
+export default ZRadio
