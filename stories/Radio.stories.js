@@ -5,7 +5,7 @@ export default {
   component: ZRadio,
   argTypes: {
     size: { control: { type: 'select', options: ['medium', 'small', 'mini'] } },
-    onClick: {}
+    type: { control: { type: 'select', options: ['primary', 'success', 'info', 'warning', 'danger', 'default'] } }
   }
 }
 
@@ -21,4 +21,6 @@ const Template = (args) => ({
 })
 
 export const Radio = Template.bind({})
-Radio.args = {}
+Radio.args = {
+  label: '男'
+}
