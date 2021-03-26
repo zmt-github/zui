@@ -91,7 +91,7 @@ export default defineComponent({
     const selfChecked = ref(props.checked)
 
     function change () {
-      ctx.emit('updata.modelValue', selfChecked.value)
+      ctx.emit('update:modelValue', selfChecked.value)
     }
     return { change, selfChecked }
   }
