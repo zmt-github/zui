@@ -7,7 +7,7 @@
         disabled ? 'is_disabled' : null
       ]"
     >
-      <span class="z-input__label">{{label}}</span>
+      <span class="z-input__label"><slot>{{label}}</slot></span>
       <span class="z-input__prefix">
 
       </span>
@@ -73,8 +73,8 @@ export default defineComponent({
   name: 'z-input',
   props: {
     modelValue: {
-      type: [String, Number],
-      default: null
+      type: String,
+      default: ''
     },
     type: {
       type: String,
@@ -173,7 +173,7 @@ export default defineComponent({
   },
 
   setup (props, cxt) {
-    const selfValue = ref('')
+    const selfValue = ref(props.modelValue)
 
     const limit = computed(() => selfValue.value.length)
 
