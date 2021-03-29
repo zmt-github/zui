@@ -105,7 +105,7 @@ export default defineComponent({
     const increase = computed(() => selfValue.value >= props.max)
 
     function change () {
-      ctx.emit('updata.modelValue', selfValue.value.toFixed(props.precision))
+      ctx.emit('update:modelValue', selfValue.value.toFixed(props.precision))
     }
 
     function active (value: boolean) {
