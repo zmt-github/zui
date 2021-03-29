@@ -1,10 +1,19 @@
 <template>
   <div class="z-select">
-    <span>
-      <select v-model="selfVaue">
-        <option v-for="item in options" :value='item[optionValueKey]' :key="item[optionValueKey]">{{options[optionLabelKey]}}</option>
-      </select>
-    </span>
+    <div class="z-select__inner">
+      <span class="z-select__label"><slot>{{label}}</slot></span>
+      <input class="z-select__original"
+        v-model="selfValue"
+        :autofocus='autofocus'
+        :disabled='disabled'
+        :name='name'
+        :required='required'
+        @change="change"
+      />
+    </div>
+    <ul class="z-select__">
+      <li v-for="(item, index) in options" :key='index'>{{item[optionLabelKey]}}</li>
+    </ul>
   </div>
 </template>
 
@@ -16,8 +25,7 @@ export default defineComponent({
 
   props: {
     modelValue: {
-      type: String,
-      default: ''
+      default: null
     },
     options: {
       type: Array,
@@ -30,6 +38,29 @@ export default defineComponent({
     optionLabelKey: {
       type: String,
       default: 'label'
+    },
+    multiple: {
+      type: Boolean,
+      default: false
+    },
+    autofocus: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    name: {
+      default: null
+    },
+    required: {
+      type: Boolean,
+      default: false
+    },
+    size: {
+      type: Number,
+      default: 1
     }
   },
 
@@ -37,7 +68,7 @@ export default defineComponent({
     const selfValue = ref(props.modelValue)
 
     function change () {
-      ctx.emit('updata.modelValue', selfValue.value)
+      ctx.emit('update:modelValue', selfValue.value)
     }
 
     return { change, selfValue }
